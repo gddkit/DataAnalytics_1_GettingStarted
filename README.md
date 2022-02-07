@@ -1,1 +1,3 @@
-# DataAnalytics_1_GettingStarted
+# Data Analytics For Immersive Technology
+
+## Getting Started
