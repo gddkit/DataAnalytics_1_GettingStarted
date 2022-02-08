@@ -1,6 +1,8 @@
+**For a markdown cheat sheet see [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)**
+
 # Data Analytics For Immersive Technology
 
-## 1 - Introduction to R Studio
+## Introduction to R Studio
 - Adding comments
 - Data types
 - Mathematical operators
@@ -8,3 +10,7 @@
 - Conditional operators
 - Data types (Vectors, Lists)
 - Graphs (Plot, Line, Scatterplot, Pie chart, Bar chart)
+
+### Useful Links
+- For R tutorial see [TutorialsPoint - R Tutorial](https://www.tutorialspoint.com/r/index.htm)
+
