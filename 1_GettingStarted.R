@@ -23,7 +23,7 @@ x <- 3i + 4
 name <- "jane smith"
 fname <- 'Jane'
 
-#logical (capitalised) 
+#logical (generally ALWAYS capitalised) 
 isRaining <- TRUE 
 
 # operators (arithmetic, logical)
@@ -31,15 +31,15 @@ age1 <- 24
 age2 <- 35
 average <- age1 + age2
 
-# <
-# <=
-if(age1 <= age2)  #less than or equal
-{
-  print("You are younger then me")
-}
-
+# logical operator
+isYounger <- age1 <= age2 #isYounger will be TRUE or FALSE
+paste("Value of isYounger is", isYounger)
 
 # control flow (e.g. if)
+if(age1 <= age2)  #less than or equal
+{
+  print("You are younger then I!")
+}
 
 # loops (while, for, repeat/break)
 
