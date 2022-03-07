@@ -177,6 +177,9 @@ diff <- function(a,b){
 
 theDiff = diff(4, 10); theDiff
 
+# exercise - calling/invoking the histogram stretching function 
+
+
 ############################ USER-INPUT ############################
 
 # input
