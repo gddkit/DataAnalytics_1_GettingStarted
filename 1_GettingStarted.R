@@ -15,6 +15,16 @@
 # The string literal "\014" sends a CTRL + L to the console to clear it
 cat("\014")
 
+
+# include any external R files with my functions
+# don't forget to set working directory under Session/Set Working Directory
+source("1_Exercise_ThresholdFunction.R")   
+
+# adding another function from an external R file
+source("funcTest.R")
+xyz <- myFunc(2,6)
+xyz
+
 ############################ DATA TYPES ############################
 
 # data types (numeric(floating-point), integer(L), complex, character, logical)
@@ -178,6 +188,7 @@ diff <- function(a,b){
 theDiff = diff(4, 10); theDiff
 
 # exercise - calling/invoking the histogram stretching function 
+myHistResult <- itHistStretch(10, 20, 15); myHistResult
 
 
 ############################ USER-INPUT ############################

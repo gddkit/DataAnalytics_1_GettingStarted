@@ -10,5 +10,3 @@ itHistStretch <- function(min, max, current){
   max * ((current - min)/(max - min))
 }
 
-# invoke with specific arguments
-stretchedResult < - itHistStretch(10, 20, 15)
