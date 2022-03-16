@@ -1,7 +1,0 @@
-Gender,Age,Height
-Male,21,1.89
-Female,24,1.75
-Female,32,1.8
-Male,19,1.72
-Male,24,1.82
-Female,25,1.86
