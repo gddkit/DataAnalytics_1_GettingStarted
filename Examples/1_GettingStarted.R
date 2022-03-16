@@ -3,27 +3,18 @@
 # Description:  Illustrating types, operators, constants, and functions 
 # Date:         03/2022
 # Version:      1.0
-# Note:         Variable names are chosen for simplicity and would not reflect the best choice of varaible name within a typical script
+# Note:         Variable names are chosen for simplicity and would not reflect the best choice of variable name within a typical script
 # See:          https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf
 #               https://www.guru99.com/r-functions-programming.html
 #               https://www.delftstack.com/howto/r/value-of-e-in-r/
 #               https://www.geeksforgeeks.org/taking-input-from-user-in-r-programming/
 #               https://www.earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-data/source-function-in-R/
+#               http://www.sthda.com/english/wiki/colors-in-r
 
 
 # cat is the concatenate and print function 
 # The string literal "\014" sends a CTRL + L to the console to clear it
 cat("\014")
-
-
-# include any external R files with my functions
-# don't forget to set working directory under Session/Set Working Directory
-source("1_Exercise_ThresholdFunction.R")   
-
-# adding another function from an external R file
-source("1_ExternalFunctions.R")
-xyz <- myFunc(2,6)
-xyz
 
 
 ############################ DATA TYPES ############################
@@ -162,6 +153,7 @@ radius = 1
 area1 = 2 * pi * (radius ^ 2)
 paste("Circle area is ", area1)
 
+
 ############################ USER-DEFINED FUNCTIONS ############################
 
 # user-defined functions
@@ -192,36 +184,117 @@ theDiff = diff(4, 10); theDiff
 myHistResult <- itHistStretch(10, 20, 15); myHistResult
 
 
-############################ USER-INPUT ############################
+############################ EXTERNAL USER-DEFINED FUNCTIONS ############################
 
-# input
-var = readline(prompt = "Enter a number:");
+# include any external R files with my functions
+# don't forget to set working directory under Session/Set Working Directory
+source("Exercises/2_Exercise_ThresholdFunction.R")   
 
-# convert the inputted value to an integer
-var = as.integer(var);
+# adding another function from an external R file
+source("2_ExternalFunctions.R")
+xyz <- myFunc(2,6)
+xyz
 
-# print the value
-print(var)
 
 ############################ FILE-INPUT ############################
 
+# reading from CSV - open this file in the Data subfolder
 participants <- read.csv("Data/genderAgeHeight.csv")
 
-# stat summary of the numerical data
-summary(participants)
+############################ ACCESSING & MANIPULATING DATA FROM FILE-INPUT ############################
+
+# view names on first row
+names(participants)
+
+# view first 2 rows
+head(participants, 2)
+
+# view last 4 rows
+tail(participants, 4)
 
 # dimensions of the data
 dim(participants)
 
+# accessing single column of data
+participants$Gender
+
+# accessing a single row of data using row-column notation
+pRow <- participants[1,]
+pRow
+
+# accessing a cell of data(row = 1, col = 1) using row-column notation
 pGender <- participants[1,1]
 pGender
+
+# determining the data type of a cell of data
 class(pGender)
 
+# accessing a cell of data(row = 1, col = 2)
 pAge <- participants[1,2]
 pAge
 class(pGender)
 
-############################ DATA STRUCTURES ############################
+# accessing the 4th height cell data
+participants$Height[4]
 
+# accessing the height of the 2nd to 4th respondents
+participants[2:4, 3]
+
+# using subset to extract data using a boolean expression
+maleData <- subset(participants, Gender == "Male")
+maleData
+
+# using subset to extract data using a boolean expression containing multiple conditions
+femaleData <- subset(participants, Gender == "Female" & Height >= 1.8 & Height <= 1.9)
+femaleData
+
+# we can apply functions and operators to single values or entire rows and columns
+heightsInCMS <- participants$Height * 100; heightsInCMS
+
+############################ GENERATING STATISTICAL DATA FROM FILE-INPUT ############################
+
+# stat summary of the numerical data
+summary(participants)
+
+# calculate the mean, median, variance, and std dev
+meanAge <- mean(participants$Age); meanAge
+medianAge <- median(participants$Age); medianAge
+varianceAge <- var(participants$Age); varianceAge
+
+# calculate the variance, and std dev (remember variance is the square of std dev)
+sqrtVarianceAge <- sqrt(varianceAge); sqrtVarianceAge
+stdDevAge <- sd(participants$Age); stdDevAge
+
+#generate a contingency table from one variable
+table(participants$Age)
+
+#generate a contingency table from two variables
+table(participants$Age, participants$Gender)
+
+# histogram of frequency of ages
+hist(participants$Age, main="Frequency of participants by Age",
+     xlab="Age Ranges in Years",
+     ylab = "Density of Ages",
+     col="red",
+     freq=FALSE)
+
+# barplot of frequency of genders
+barplot(table(participants$Gender), main="Frequency of Gender",)
+
+# scatterplot of age vs height
+plot(participants$Age, participants$Height, main="Age vs Height",
+     xlab="Age(Years)", ylab="Height(Metres)", 
+     xlim=c(5,40),
+     ylim=c(0,3),
+     pch=5, 
+     col="orange")
+
+#boxplot of heights
+boxplot(participants$Height, ylab = "Height in cms")
+
+#boxplot of heights as a function of gender (or group by gender)
+boxplot(participants$Height ~ participants$Gender)
+
+############################ END ############################
 
 
