@@ -21,9 +21,10 @@ cat("\014")
 source("1_Exercise_ThresholdFunction.R")   
 
 # adding another function from an external R file
-source("funcTest.R")
+source("1_ExternalFunctions.R")
 xyz <- myFunc(2,6)
 xyz
+
 
 ############################ DATA TYPES ############################
 
@@ -204,6 +205,21 @@ print(var)
 
 ############################ FILE-INPUT ############################
 
+participants <- read.csv("Data/genderAgeHeight.csv")
+
+# stat summary of the numerical data
+summary(participants)
+
+# dimensions of the data
+dim(participants)
+
+pGender <- participants[1,1]
+pGender
+class(pGender)
+
+pAge <- participants[1,2]
+pAge
+class(pGender)
 
 ############################ DATA STRUCTURES ############################
 
