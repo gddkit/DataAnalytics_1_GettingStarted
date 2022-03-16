@@ -180,8 +180,7 @@ diff <- function(a,b){
 
 theDiff = diff(4, 10); theDiff
 
-# exercise - calling/invoking the histogram stretching function 
-myHistResult <- itHistStretch(10, 20, 15); myHistResult
+
 
 
 ############################ EXTERNAL USER-DEFINED FUNCTIONS ############################
@@ -194,6 +193,9 @@ source("Exercises/2_Exercise_ThresholdFunction.R")
 source("2_ExternalFunctions.R")
 xyz <- myFunc(2,6)
 xyz
+
+# exercise - calling/invoking the histogram stretching function 
+myHistResult <- itHistStretch(10, 20, 15); myHistResult
 
 
 ############################ FILE-INPUT ############################
