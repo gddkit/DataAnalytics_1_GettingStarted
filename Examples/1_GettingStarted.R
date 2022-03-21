@@ -201,7 +201,9 @@ myHistResult <- itHistStretch(10, 20, 15); myHistResult
 ############################ FILE-INPUT ############################
 
 # reading from CSV - open this file in the Data subfolder
+# data frame (row, columns)
 participants <- read.csv("Data/genderAgeHeight.csv")
+
 
 ############################ ACCESSING & MANIPULATING DATA FROM FILE-INPUT ############################
 
@@ -209,7 +211,7 @@ participants <- read.csv("Data/genderAgeHeight.csv")
 names(participants)
 
 # view first 2 rows
-head(participants, 2)
+head(participants, 3)
 
 # view last 4 rows
 tail(participants, 4)
@@ -220,6 +222,10 @@ dim(participants)
 # accessing single column of data
 participants$Gender
 
+# allTheHeights <- participants$Height
+# transformHeight <- allTheHeights * 1.5
+
+
 # accessing a single row of data using row-column notation
 pRow <- participants[1,]
 pRow
@@ -229,7 +235,10 @@ pGender <- participants[1,1]
 pGender
 
 # determining the data type of a cell of data
-class(pGender)
+class(pGender) #"1.89"
+# intHeight <- as.integer((heightAsStr))
+# strClass <- class(pGender)
+# if(strClass == "character")
 
 # accessing a cell of data(row = 1, col = 2)
 pAge <- participants[1,2]
@@ -247,11 +256,16 @@ maleData <- subset(participants, Gender == "Male")
 maleData
 
 # using subset to extract data using a boolean expression containing multiple conditions
-femaleData <- subset(participants, Gender == "Female" & Height >= 1.8 & Height <= 1.9)
+femaleData <- subset(participants, Gender == "Female" & (Height >= 1.8 & Height <= 1.9))
 femaleData
 
 # we can apply functions and operators to single values or entire rows and columns
 heightsInCMS <- participants$Height * 100; heightsInCMS
+
+# if(heightsInCMS[i] < 0)
+# {
+#   heightsInCMS[i] = abs(heightsInCMS[i])
+# }
 
 ############################ GENERATING STATISTICAL DATA FROM FILE-INPUT ############################
 
@@ -283,12 +297,14 @@ hist(participants$Age, main="Frequency of participants by Age",
 # barplot of frequency of genders
 barplot(table(participants$Gender), main="Frequency of Gender",)
 
+#A...BC....H....N
+
 # scatterplot of age vs height
 plot(participants$Age, participants$Height, main="Age vs Height",
      xlab="Age(Years)", ylab="Height(Metres)", 
      xlim=c(5,40),
      ylim=c(0,3),
-     pch=5, 
+     pch=11, 
      col="orange")
 
 #boxplot of heights
@@ -299,4 +315,4 @@ boxplot(participants$Height ~ participants$Gender)
 
 ############################ END ############################
 
-
+pnorm(1800, mean = 1500, sd = 300)
