@@ -316,3 +316,10 @@ boxplot(participants$Height ~ participants$Gender)
 ############################ END ############################
 
 pnorm(1800, mean = 1500, sd = 300)
+
+
+
+
+
+
+

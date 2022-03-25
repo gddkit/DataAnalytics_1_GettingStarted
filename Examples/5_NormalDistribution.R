@@ -3,7 +3,7 @@
 # Description:  Illustrating concepts relating to normal distribution
 # Date:         03/2022
 # Version:      1.0
-# See:          https://www.tutorialspoint.com/r/r_normal_distribution.htm
+# See:          [UPDATED 25.3.22]https://data-flair.training/blogs/normal-distribution-in-r/
 
 
 # cat is the concatenate and print function 
@@ -13,3 +13,8 @@ cat("\014")
 #rnorm
 
 #dnorm
+
+#pnorm
+
+
+
