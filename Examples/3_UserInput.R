@@ -13,13 +13,14 @@
 cat("\014")
 
 # input an integer as a string
-myAgeAsStr = readline(prompt = "Enter an age:");
+myAgeAsStr <- readline(prompt = "Enter an age:");
+
 
 #uncomment the line below to see what happens when we try to use a string as an integer (or float) (i.e. we get a non-numeric argument to binary operator error)
 # doubleAge <- myAgeAsStr * 2; doubleAge
 
 # convert the input value to an integer
-myAgeAsInt = as.integer(myAgeAsStr);
+myAgeAsInt <- as.integer(myAgeAsStr);
 
 # input
 myHeightInCMSAsStr = readline(prompt = "Enter your height in cm:");
@@ -33,5 +34,8 @@ myHeightInMetresAsFloat = myHeightInCMSAsFloat / 100
 #create a string from a concatenation of strings and the integer
 outputStr <- paste("You are", myAgeAsInt, "years old and ", myHeightInMetresAsFloat, "metres tall!")
 
+#csv => niall, mcguinness
+
 # print the output string
 print(outputStr)
+
