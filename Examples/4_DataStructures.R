@@ -39,13 +39,15 @@ repeatTeamIDs
 repeatTeamAllocations <- rep(c("acc", "sales", "QA"), times = c(3, 5, 2))
 repeatTeamAllocations
 
+#sequence
 numbers <- 1:20
 numbers
 
 otherNumbers <- 2.5:8.5
 otherNumbers
 
-
+someOtherNumbers <- seq(from = -10, to = 20, by = 2.7)
+someOtherNumbers
 
 #list examples
 
