@@ -3,7 +3,8 @@
 # Description:  Illustrating common R language data types (e.g. vector, list, matrix, array)
 # Date:         03/2022
 # Version:      1.0
-# See:          https://www.w3schools.com/r/r_vectors.asp
+# See:          https://www.tutorialspoint.com/r/r_vectors.htm
+#               https://www.w3schools.com/r/r_vectors.asp
 
 #vector examples
 names <- c('alan','bea','ciara', 'dave', 'erica') # ""
