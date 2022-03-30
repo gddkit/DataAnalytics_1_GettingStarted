@@ -15,7 +15,6 @@ cat("\014")
 # input an integer as a string
 myAgeAsStr <- readline(prompt = "Enter an age:");
 
-
 #uncomment the line below to see what happens when we try to use a string as an integer (or float) (i.e. we get a non-numeric argument to binary operator error)
 # doubleAge <- myAgeAsStr * 2; doubleAge
 

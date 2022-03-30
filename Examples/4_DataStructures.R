@@ -6,19 +6,21 @@
 # See:          https://www.tutorialspoint.com/r/r_vectors.htm
 #               https://www.w3schools.com/r/r_vectors.asp
 
-#vector examples
+#instanciating a vector
 names <- c('alan','bea','ciara', 'dave', 'erica') # ""
 names
 
 heights <- c(1.78, 1.84, 1.81)
 heights
 
+#length and sort (natural sort order)
 theNamesLength <- length(names)
 theNamesLength
 
 sortedHeights <- sort(heights)
 sortedHeights
 
+#square bracket notation to access and modify a vector
 aName <- names[2]
 aName
 
@@ -31,6 +33,7 @@ exclName
 names[2] <- "beatrix"
 names
 
+#repeat values
 repeatTeams <- rep(c("liverpool", "arsenal"), each = 5)
 repeatTeams
 

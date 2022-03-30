@@ -3,38 +3,64 @@
 # Description:  Illustrating concepts relating to normal distribution
 # Date:         03/2022
 # Version:      1.0
-# See:          [UPDATED 25.3.22]https://data-flair.training/blogs/normal-distribution-in-r/
+# See:          [UPDATED 30.3.22]
+#               https://data-flair.training/blogs/normal-distribution-in-r/
+#               http://www.sthda.com/english/wiki/line-types-in-r-lty
+#               https://www.youtube.com/watch?v=lPOSwfxMd3c
+#               https://statisticsglobe.com/increase-font-size-in-plot-in-r
 
 
 # cat is the concatenate and print function 
 # The string literal "\014" sends a CTRL + L to the console to clear it
 cat("\014")
 
-#rnorm
+######################################### rnorm #########################################
+
+#rnorm - used to generate N random values in a normal distribution
 
 #generate a set of 25 random values with mean and SD
 y <- rnorm(250, 0, 1)
-hist(y, main = "ND", col = "yellow")
+hist(y, 
+     main = "Frequency of Normally Distributed Random Values [M=0, SD=1]", 
+     ylab = "Frequency",
+     col = "yellow")
 
-#dnorm
+######################################### dnorm #########################################
 
-#pnorm
+#dnorm - used to generate a probability density over a normal distribution
+
+x <- seq(-4, 4, length=40)
+y <- dnorm(x, 0, 1)
+plot(x, y, 
+     main="Probability Density of Normally Distributed Values in range [-4, 4] with [M=0, SD=1]",
+     ylab="Probability Density")
+
+
+######################################### pnorm #########################################
+
+#pnorm - used to generate a probability distribution function over a normal distribution
+
 x <- -50:50
 y <- pnorm(x, mean = 4, sd = 1)
-plot(x,y, ylab = "Probability", col = "blue")
+plot(x,y,  
+     main = "Cumulative Density of Normally Distributed Values in [-50,50] and with [M=4, SD=1]", 
+     ylab = "Probability Density",
+     col = "blue")
 
-#ans <- pnorm(3, 4, 1); ans
-
-percentile <- pnorm(1800, 1500, 300)
+#pnorm - we can also use pnorm to calculate the percentile given X, M, and SD
+grade <- 1800
+mean <- 1500
+sd <- 300
+percentile <- pnorm(grade, mean, sd)
 percentile
+print(paste("With a grade of", grade, ",Pam is in the", percentile, "percentile!"))
 
-#pam
-# pnorm(1800, mean = 1500, sd = 150)
+######################################### qnorm #########################################
 
-#ketchup (1000grams)
-# hi <- pnorm(1034, mean = 1000, sd = 25)
-#  lo <- pnorm(957, mean = 1000, sd = 25)
-# range <- hi - lo; range 
+#qnorm - we can use qnorm to convert from a percentile to a Z-score 
+zScore <- qnorm(percentile)
+originalGrade <- zScore * sd + mean 
+print(paste("With a percentile of ", percentile, ". Pam's original grade is", originalGrade))
 
 
 
