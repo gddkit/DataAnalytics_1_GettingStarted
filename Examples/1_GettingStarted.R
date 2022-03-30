@@ -4,7 +4,8 @@
 # Date:         03/2022
 # Version:      1.0
 # Note:         Variable names are chosen for simplicity and would not reflect the best choice of variable name within a typical script
-# See:          https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf
+# See:          https://r-lang.com/
+#               https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf
 #               https://www.guru99.com/r-functions-programming.html
 #               https://www.delftstack.com/howto/r/value-of-e-in-r/
 #               https://www.geeksforgeeks.org/taking-input-from-user-in-r-programming/

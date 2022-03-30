@@ -19,7 +19,7 @@ cat("\014")
 #rnorm - used to generate N random values in a normal distribution
 
 #generate a set of 25 random values with mean and SD
-y <- rnorm(250, 0, 1)
+y <- rnorm(250, 15, 3)
 hist(y, 
      main = "Frequency of Normally Distributed Random Values [M=0, SD=1]", 
      ylab = "Frequency",
@@ -29,7 +29,7 @@ hist(y,
 
 #dnorm - used to generate a probability density over a normal distribution
 
-x <- seq(-4, 4, length=40)
+x <- seq(-4, 4, length=40); x
 y <- dnorm(x, 0, 1)
 plot(x, y, 
      main="Probability Density of Normally Distributed Values in range [-4, 4] with [M=0, SD=1]",
@@ -38,7 +38,7 @@ plot(x, y,
 
 ######################################### pnorm #########################################
 
-#pnorm - used to generate a probability distribution function over a normal distribution
+#pnorm - used to generate a cumulative density distribution function over a normal distribution
 
 x <- -50:50
 y <- pnorm(x, mean = 4, sd = 1)
@@ -51,14 +51,15 @@ plot(x,y,
 grade <- 1800
 mean <- 1500
 sd <- 300
+#zScore is 1
 percentile <- pnorm(grade, mean, sd)
-percentile
-print(paste("With a grade of", grade, ",Pam is in the", percentile, "percentile!"))
+# percentile
+print(paste("With a grade of", grade, ",Pam is in the", round(100*percentile,1), "percentile!"))
 
 ######################################### qnorm #########################################
 
 #qnorm - we can use qnorm to convert from a percentile to a Z-score 
-zScore <- qnorm(percentile)
+zScore <- qnorm(percentile); zScore
 originalGrade <- zScore * sd + mean 
 print(paste("With a percentile of ", percentile, ". Pam's original grade is", originalGrade))
 
