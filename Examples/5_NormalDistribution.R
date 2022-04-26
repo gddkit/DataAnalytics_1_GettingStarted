@@ -19,9 +19,9 @@ cat("\014")
 #rnorm - used to generate N random values in a normal distribution
 
 #generate a set of 25 random values with mean and SD
-y <- rnorm(250, 15, 3)
+y <- rnorm(250, 0, 1)
 hist(y, 
-     main = "Frequency of Normally Distributed Random Values [M=15, SD=3]", 
+     main = "Frequency of Normally Distributed Random Values [M=0, SD=1]", 
      ylab = "Frequency",
      col = "yellow")
 
