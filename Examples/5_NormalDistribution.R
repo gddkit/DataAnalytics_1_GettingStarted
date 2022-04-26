@@ -21,7 +21,7 @@ cat("\014")
 #generate a set of 25 random values with mean and SD
 y <- rnorm(250, 15, 3)
 hist(y, 
-     main = "Frequency of Normally Distributed Random Values [M=0, SD=1]", 
+     main = "Frequency of Normally Distributed Random Values [M=15, SD=3]", 
      ylab = "Frequency",
      col = "yellow")
 
@@ -29,9 +29,10 @@ hist(y,
 
 #dnorm - used to generate a probability density over a normal distribution
 
-x <- seq(-4, 4, length=40); x
+x <- seq(-4, 4, length=40); 
 y <- dnorm(x, 0, 1)
-plot(x, y, 
+
+plot(x, y,
      main="Probability Density of Normally Distributed Values in range [-4, 4] with [M=0, SD=1]",
      ylab="Probability Density")
 
@@ -51,6 +52,7 @@ plot(x,y,
 grade <- 1800
 mean <- 1500
 sd <- 300
+
 #zScore is 1
 percentile <- pnorm(grade, mean, sd)
 # percentile
@@ -64,8 +66,9 @@ originalGrade <- zScore * sd + mean
 print(paste("With a percentile of ", percentile, ". Pam's original grade is", originalGrade))
 
 
+v <- pnorm(1.48, mean = 0, sd = 1); v
 
-
+z <- qnorm(0.815); z
 
 
 

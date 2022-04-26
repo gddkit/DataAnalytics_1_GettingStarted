@@ -1,4 +1,5 @@
-#https://statisticsglobe.com/increase-font-size-in-plot-in-r
+# https://statisticsglobe.com/increase-font-size-in-plot-in-r
+# https://www.statmethods.net/advgraphs/layout.html
 
 # exercise 1 - loading data from CSV
 aqiData <- read.csv("aqi_2022.csv")
@@ -28,10 +29,6 @@ summary(aqiData$aqi)
 stdDevAQI <- sd(aqiData$aqi); stdDevAQI
 
 #exercise - use subset to filter only paris aqi levels in range [0,125]
-
-
-
-
 
 #quadratic
 
